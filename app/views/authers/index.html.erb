@@ -1,0 +1,45 @@
+<div class = "container-fluid" style="background-color: black;">
+<ul class="nav nav-pills nav-justified">
+  <li class="nav-item">
+    <a class="nav-link active" href="/">Book</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/authers/new">Create New Auther</a>
+  </li>
+ 
+ 
+</ul>
+</div>
+<div class = "container">
+<h1 class = "display-3 text-center">All the Authers</h1>
+
+<%= link_to "Add an Auther", new_auther_path, { :class => "button waves-effect waves-light btn" } %>
+<br><br>
+
+<table class="table table-hover striped bordered">
+  <tr>
+    <th>Publisher</th>
+    <th>BirthDate</th>
+    <th>FirstName</th>
+    <th>LastName</th>
+    <th>PenName</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+
+  <% @authers.each do |auther| %>
+      <tr>
+        <td><%= link_to auther.publisher, auther_path(auther) %></td>
+        <td><%= auther.birthdate %></td>
+        <td><%= auther.first_name %></td>
+        <td><%= auther.last_name %></td>
+        <td><%= auther.pen_name %></td>
+        <td><a class="glyphicon glyphicon-edit" href="<%= edit_auther_path(auther) %>" ></a>
+        </td>
+        <td> <a class="glyphicon glyphicon-trash" data-confirm="Are you sure you want to delete <%= auther.publisher %>?" data-method="delete" href="/authers/<%= auther.id %>" rel="nofollow">
+        </a>
+        </td>
+      </tr>
+  <% end %>
+</table>
+</div>

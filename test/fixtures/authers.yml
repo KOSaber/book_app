@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  publisher: MyString
+  genre: MyString
+  birthdate: 2019-12-16
+  first_name: MyString
+  last_name: MyString
+  pen_name: MyString
+
+two:
+  publisher: MyString
+  genre: MyString
+  birthdate: 2019-12-16
+  first_name: MyString
+  last_name: MyString
+  pen_name: MyString
